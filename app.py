@@ -169,6 +169,7 @@ df_countries['GDP Category'] = pd.cut(
 latest_year = df_countries['Year'].max()
 
 app = dash.Dash(__name__)
+server = app.server
 
 colors = {
     'background': '#0f172a',
@@ -409,4 +410,4 @@ if __name__ == '__main__':
     if 'Region' in df_countries.columns:
         print(f"Regions loaded: {df_countries['Region'].nunique()}")
     print("Starting dashboard server...")
-    app.run(debug=True, port=8050)
+    app.run(debug=False)
